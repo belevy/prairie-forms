@@ -1,0 +1,45 @@
+cabal-version:      3.4
+name:               prairie-forms
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            NONE
+author:             Ben Levy
+maintainer:         ben@foxhound.systems
+-- copyright:
+category:           Web
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:
+        Prairie.Digestive.View
+        Prairie.Digestive.Form
+
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.18.2.1
+                    , prairie
+                    , digestive-functors
+                    , text
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite prairie-forms-test
+    import:           warnings
+    default-language: Haskell2010
+    -- other-modules:
+    -- other-extensions:
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends: base ^>=4.18.2.1
+                 , prairie-forms
+                 , digestive-functors
+                 , prairie
+                 , text
